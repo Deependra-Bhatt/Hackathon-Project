@@ -1,0 +1,48 @@
+# ==========================================
+#  Display Bookshelves Framework .gitignore
+# ==========================================
+
+# ---------- Maven Build Outputs ----------
+target/
+*.jar
+*.war
+*.ear
+
+# ---------- IDE Specific Files ----------
+# Eclipse
+.settings/
+.project
+.classpath
+.factorypath
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+
+# NetBeans
+nbproject/private/
+build/
+nbbuild/
+dist/
+
+# ---------- Test Execution Reports & Logs ----------
+# TestNG native outputs
+test-output/
+
+# Framework Custom Test Reports (Extent, Cucumber HTML/JSON, etc.)
+reports/
+allure-results/
+allure-report/
+spark/
+screenshots/
+logs/
+*.log
+
+# ---------- OS & System Files ----------
+Thumbs.db
+.DS_Store
+
+# ---------- Security / Environment Configurations ----------
+# Keep local configurations out of source control if they contain credentials
+.env
