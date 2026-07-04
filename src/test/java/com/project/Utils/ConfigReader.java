@@ -7,7 +7,6 @@ import java.util.Properties;
 public class ConfigReader {
 
     private static Properties properties;
-
     private static final String CONFIG_PATH =
             "src/test/resources/config.properties";
 
@@ -15,20 +14,14 @@ public class ConfigReader {
      * Loads the properties file only once
      */
     private static void loadProperties() {
-
         if (properties == null) {
-
             properties = new Properties();
 
             try (FileInputStream input =
                          new FileInputStream(CONFIG_PATH)) {
-
                 properties.load(input);
-
                 System.out.println("config.properties loaded successfully.");
-
             } catch (IOException e) {
-
                 throw new RuntimeException(
                         "Failed to load config.properties : "
                                 + e.getMessage());
@@ -42,14 +35,12 @@ public class ConfigReader {
     public static String getProperty(String key) {
 
         loadProperties();
-
         String value = properties.getProperty(key);
 
         if (value == null) {
             throw new RuntimeException(
                     "Property '" + key + "' not found in config.properties");
         }
-
         return value.trim();
     }
 

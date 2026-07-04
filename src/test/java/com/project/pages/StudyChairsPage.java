@@ -3,6 +3,8 @@ package com.project.pages;
 import java.time.Duration;
 import java.util.*;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
@@ -15,6 +17,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class StudyChairsPage {
 	private WebDriver driver;
 	private WebDriverWait wait;
+    private static final Logger log = LogManager.getLogger(StudyChairsPage.class);
+
 
 	 @FindBy(css = "ct-web-popup-imageonly")
 	 private WebElement shadowHost;
@@ -49,7 +53,7 @@ public class StudyChairsPage {
 	public void sortByPopularity() {    
 		wait.until(ExpectedConditions.elementToBeClickable(allFiltersBtn));
 		allFiltersBtn.click(); 
-		System.out.println("All Filters clicked");
+		log.info("All Filters clicked");
 		
 		wait.until(ExpectedConditions.visibilityOf(filterDrawer));
 		
@@ -88,7 +92,7 @@ public class StudyChairsPage {
 		for (int i = 0; i < limit; i++) {
 			String chairName = studyChairs.get(i).getText().trim();
 			topThreeChairNames.add(chairName);           
-			System.out.println("Study Chair " + (i + 1) + " : "+ chairName);
+			log.info("Study Chair " + (i + 1) + " : "+ chairName);
 			}    
 		}
 	/*Returns the saved top 3 results*/
@@ -102,10 +106,10 @@ public class StudyChairsPage {
 	            SearchContext shadowRoot = shadowHost.getShadowRoot();
 	            WebElement closeButton = shadowRoot.findElement(By.cssSelector("#close"));
 	            closeButton.click();
-	            System.out.println("Pop-up successfully closed!");
+	            log.info("Pop-up successfully closed!");
 	            Thread.sleep(1000);
 	        } catch (Exception e) {
-	            System.out.println("Pop-up skipped or not found.");
+	            log.warn("Pop-up skipped or not found.");
 	        }
 	    }
 }
