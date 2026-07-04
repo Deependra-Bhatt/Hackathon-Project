@@ -2,6 +2,8 @@ package com.project.stepDefinitions;
 
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 
 import com.project.Hooks.Hooks;
@@ -17,6 +19,8 @@ public class StudyChairsSteps {
 
     private StudyChairsPage studyChairPage;
     private List<String> topThreeChairs;
+    private static final Logger log = LogManager.getLogger(StudyChairsSteps.class);
+
 
     @Given("User navigates to Study Chairs page")
     public void user_navigates_to_study_chairs_page() {
@@ -32,7 +36,7 @@ public class StudyChairsSteps {
     	//Initialize page object
     	studyChairPage = new StudyChairsPage(Hooks.getDriver());
     	
-    	System.out.println("Directly opened Study Chairs Page on browser:"+browser);
+    	log.info("Directly opened Study Chairs Page on browser:"+browser);
         
     }
 
@@ -79,7 +83,7 @@ public class StudyChairsSteps {
                     chair.isEmpty(),
                     "Chair name is empty");
 
-            System.out.println(chair);
+            log.info(chair);
         }
     }
 }

@@ -2,6 +2,8 @@ package com.project.Hooks;
 
 import java.time.Duration;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -14,6 +16,8 @@ import io.cucumber.java.After;
 public class Hooks {
 
     public static WebDriver driver;
+    private static final Logger log = LogManager.getLogger(Hooks.class);
+
 
     /**
      * Called from step definitions with the browser name
@@ -44,7 +48,7 @@ public class Hooks {
                       Duration.ofSeconds(
                               ConfigReader.getImplicitWait()));
 
-        System.out.println(
+        log.info(
                 "Browser [" + browser + "] launched successfully.");
     }
 
@@ -66,7 +70,7 @@ public class Hooks {
             driver.quit();
             driver = null;
 
-            System.out.println("Browser closed after scenario execution.");
+            log.info("Browser closed after scenario execution.");
         }
     }
 }

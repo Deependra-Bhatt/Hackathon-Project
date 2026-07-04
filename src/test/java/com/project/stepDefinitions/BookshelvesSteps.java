@@ -2,16 +2,19 @@ package com.project.stepDefinitions;
 
 import com.project.Hooks.Hooks;
 import com.project.Utils.ConfigReader;
-import com.project.base.BaseTest;
 import com.project.pages.BookshelvesPage;
 import com.project.pages.HomePage;
-import io.cucumber.java.After;
 import io.cucumber.java.en.*;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 
 public class BookshelvesSteps {
     HomePage homePage;
     BookshelvesPage bookshelvesPage;
+    private static final Logger log = LogManager.getLogger(BookshelvesSteps.class);
+
 
     @Given("User launches the website")
     public void user_launches_the_website() {
@@ -28,7 +31,7 @@ public class BookshelvesSteps {
     	homePage = new HomePage(Hooks.getDriver());
     	bookshelvesPage = new BookshelvesPage(Hooks.getDriver());
     	
-    	System.out.println("Navigated tp HomePage on browser: "+browser);
+    	log.info("Navigated tp HomePage on browser: "+browser);
 	}
 
     @When("User dismisses introductory popups on homepage")
@@ -54,7 +57,7 @@ public class BookshelvesSteps {
         
         // Assertion 1: Verify element list is not empty
         Assert.assertTrue(totalItems > 0, "TC01 Failed: Product card array returned empty!");
-        System.out.println("TC01 Passed: Found " + totalItems + " product elements.");
+        log.info("TC01 Passed: Found " + totalItems + " product elements.");
     }
 
     @Then("The results should display up to 5 items and all displayed items must contain {string}")

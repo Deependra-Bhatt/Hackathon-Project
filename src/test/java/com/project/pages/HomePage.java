@@ -1,6 +1,9 @@
 package com.project.pages;
 
 import java.time.Duration;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
@@ -14,6 +17,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class HomePage {
     private WebDriver driver;
     private WebDriverWait wait;
+    private static final Logger log = LogManager.getLogger(HomePage.class);
 
     // PageFactory Locators
     @FindBy(css = "ct-web-popup-imageonly")
@@ -37,10 +41,10 @@ public class HomePage {
             SearchContext shadowRoot = shadowHost.getShadowRoot();
             WebElement closeButton = shadowRoot.findElement(By.cssSelector("#close"));
             closeButton.click();
-            System.out.println("Pop-up successfully closed!");
+            log.info("Pop-up successfully closed!");
             Thread.sleep(1000);
         } catch (Exception e) {
-            System.out.println("Pop-up skipped or not found.");
+            log.warn("Pop-up skipped or not found.");
         }
     }
 
@@ -50,6 +54,6 @@ public class HomePage {
         actions.moveToElement(storageFurnitureMenu).perform();
         
         wait.until(ExpectedConditions.elementToBeClickable(bookshelvesLink)).click();
-        System.out.println("Navigated to Bookshelves via Navigation Bar.");
+        log.info("Navigated to Bookshelves via Navigation Bar.");
     }
 }
