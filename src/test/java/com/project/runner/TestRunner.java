@@ -4,7 +4,9 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
-    features = "src/test/resources/features",
+	features = {"src/test/resources/features/bookshelves.feature",
+			    "src/test/resources/features/StudyChairs.feature"
+			},
     glue = "com.project.stepDefinitions",
     plugin = {
         "pretty",

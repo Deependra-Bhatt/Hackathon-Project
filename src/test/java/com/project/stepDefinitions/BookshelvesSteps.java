@@ -1,5 +1,7 @@
 package com.project.stepDefinitions;
 
+import com.project.Hooks.Hooks;
+import com.project.Utils.ConfigReader;
 import com.project.base.BaseTest;
 import com.project.pages.BookshelvesPage;
 import com.project.pages.HomePage;
@@ -11,17 +13,25 @@ public class BookshelvesSteps {
     HomePage homePage;
     BookshelvesPage bookshelvesPage;
 
-    @Given("User launches the website on {string}")
-    public void user_launches_the_website(String browser) throws Exception {
-        // Initializes a fresh driver instance per scenario based on the Examples table data
-        BaseTest.initializeDriver(browser);
-        BaseTest.getDriver().get("https://www.urbanladder.com/");
-        
-        homePage = new HomePage(BaseTest.getDriver());
-        bookshelvesPage = new BookshelvesPage(BaseTest.getDriver());
-    }
+    @Given("User launches the website")
+    public void user_launches_the_website() {
+        //Read Browser from config file
+    	String browser = ConfigReader.getBrowser();
+    	
+    	//Initialize driver via Hooks
+    	Hooks.launchBrowser(browser);
+    	
+    	//Navigate to HomePage
+    	Hooks.getDriver().get(ConfigReader.getHomePageUrl());
+    	
+    	//Initialize page objects
+    	homePage = new HomePage(Hooks.getDriver());
+    	bookshelvesPage = new BookshelvesPage(Hooks.getDriver());
+    	
+    	System.out.println("Navigated tp HomePage on browser: "+browser);
+	}
 
-    @When("User dismisses any introductory popups")
+    @When("User dismisses introductory popups on homepage")
     public void user_dismisses_any_introductory_popups() {
         homePage.handlePopUpIfPresent();
     }
@@ -53,10 +63,10 @@ public class BookshelvesSteps {
         bookshelvesPage.validateTopProducts(5, 15000, keyword);
     }
 
-    @After
+   /* @After
     public void tearDown() {
         // Automatically runs at the end of each scenario outline iteration to close the active browser
         BaseTest.quitDriver();
         System.out.println("Browser closed successfully after scenario execution.");
-    }
+    }*/
 }
