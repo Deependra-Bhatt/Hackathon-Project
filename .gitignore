@@ -29,6 +29,7 @@ dist/
 # ---------- Test Execution Reports & Logs ----------
 # TestNG native outputs
 test-output/
+target/
 
 # Framework Custom Test Reports (Extent, Cucumber HTML/JSON, etc.)
 reports/
