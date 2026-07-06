@@ -5,5 +5,4 @@ Feature: Urban Ladder Collections
     Given User launches Collections page
     When User closes popup if present
     And User navigates to New Arrivals
-    And User opens Oasis Collection
     Then Display Oasis submenu items

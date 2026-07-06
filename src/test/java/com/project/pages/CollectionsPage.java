@@ -54,30 +54,30 @@ public class CollectionsPage {
         }
     }
 
-    public void clickOasisCollection() {
-
-        try {
-
-            WebElement oasisLink =
-                    wait.until(
-                            ExpectedConditions.elementToBeClickable(
-                                    By.xpath(
-                                            "//a[contains(@href,'oasis')] | //a[contains(text(),'Oasis')]")));
-
-            js.executeScript("arguments[0].scrollIntoView(true);", oasisLink);
-            js.executeScript("arguments[0].click();",              oasisLink);
-
-            waitForPageLoad();
-
-            System.out.println("Clicked Oasis Collection");
-            System.out.println("Current URL : " + driver.getCurrentUrl());
-
-        } catch (Exception e) {
-
-            System.out.println("Unable to Click Oasis Collection");
-            e.printStackTrace();
-        }
-    }
+//    public void clickOasisCollection() {
+//
+//        try {
+//
+//            WebElement oasisLink =
+//                    wait.until(
+//                            ExpectedConditions.elementToBeClickable(
+//                                    By.xpath(
+//                                            "//a[contains(@href,'oasis')] | //a[contains(text(),'Oasis')]")));
+//
+//            js.executeScript("arguments[0].scrollIntoView(true);", oasisLink);
+//            js.executeScript("arguments[0].click();",              oasisLink);
+//
+//            waitForPageLoad();
+//
+//            System.out.println("Clicked Oasis Collection");
+//            System.out.println("Current URL : " + driver.getCurrentUrl());
+//
+//        } catch (Exception e) {
+//
+//            System.out.println("Unable to Click Oasis Collection");
+//            e.printStackTrace();
+//        }
+//    }
 
     public List<String> getOasisSubMenuItems() {
 
@@ -85,50 +85,55 @@ public class CollectionsPage {
 
         try {
 
-            wait.until(
-                    ExpectedConditions.presenceOfAllElementsLocatedBy(
-                            By.tagName("a")));
+            // Wait for Oasis Collection section to be visible
+            WebElement oasisSection = wait.until(
+                    ExpectedConditions.visibilityOfElementLocated(
+                            By.cssSelector("li[data-testid='navigation-desktop-sub-category-0']")));
 
-            List<WebElement> links = driver.findElements(By.tagName("a"));
+            // Get all submenu links under Oasis Collection
+            List<WebElement> links = oasisSection.findElements(By.tagName("a"));
 
             for (WebElement link : links) {
 
                 String text = link.getText().trim();
 
-                if (!text.isEmpty() && !menuItems.contains(text)) {
+                if (!text.isEmpty()) {
                     menuItems.add(text);
                 }
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("Failed to retrieve Oasis Collection submenu items", e);
         }
 
         return menuItems;
     }
 
+
     public void displayOasisSubMenuItems() {
 
         List<String> menuItems = getOasisSubMenuItems();
 
-        //System.out.println();
         log.info("========================================");
         log.info(" OASIS COLLECTION SUBMENU ITEMS");
         log.info("========================================");
 
         for (int i = 0; i < menuItems.size(); i++) {
-            System.out.println((i + 1) + ". " + menuItems.get(i));
+
+            String item = (i + 1) + ". " + menuItems.get(i);
+
+            System.out.println(item);
+            log.info(item);
         }
 
-        System.out.println();
+        log.info("========================================");
         log.info("Total Menu Items : " + menuItems.size());
         log.info("========================================");
 
-        Assert.assertTrue(
-                menuItems.size() > 0,
-                "No Oasis submenu items found");
+        Assert.assertFalse(
+                menuItems.isEmpty(),
+                "No Oasis Collection submenu items found");
     }
-
     private void waitForPageLoad() {
 
         wait.until(driver ->

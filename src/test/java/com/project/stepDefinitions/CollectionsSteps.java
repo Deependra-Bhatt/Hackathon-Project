@@ -48,11 +48,11 @@ public class CollectionsSteps {
         collectionsPage.clickNewArrivals();
     }
 
-    @And("User opens Oasis Collection")
-    public void user_opens_oasis_collection() {
-
-        collectionsPage.clickOasisCollection();
-    }
+//    @And("User opens Oasis Collection")
+//    public void user_opens_oasis_collection() {
+//
+//        collectionsPage.clickOasisCollection();
+//    }
 
     @Then("Display Oasis submenu items")
     public void display_oasis_submenu_items() {
