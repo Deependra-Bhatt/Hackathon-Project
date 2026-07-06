@@ -1,14 +1,20 @@
 package com.project.stepDefinitions;
 
-import com.project.Hooks.Hooks;
-import com.project.Utils.ConfigReader;
-import com.project.pages.BookshelvesPage;
-import com.project.pages.HomePage;
-import io.cucumber.java.en.*;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
+
+import com.project.Hooks.Hooks;
+import com.project.Utils.ConfigReader;
+import com.project.base.BaseTest;
+import com.project.pages.BookshelvesPage;
+import com.project.pages.HomePage;
+
+import io.cucumber.java.After;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
 public class BookshelvesSteps {
     HomePage homePage;
@@ -66,10 +72,10 @@ public class BookshelvesSteps {
         bookshelvesPage.validateTopProducts(5, 15000, keyword);
     }
 
-   /* @After
+    @After
     public void tearDown() {
         // Automatically runs at the end of each scenario outline iteration to close the active browser
-        BaseTest.quitDriver();
-        System.out.println("Browser closed successfully after scenario execution.");
-    }*/
+        Hooks.tearDown();
+        log.info("Browser closed successfully after scenario execution.");
+    }
 }

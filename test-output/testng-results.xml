@@ -2,58 +2,58 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-07-03T18:30:03 IST" name="BDD Cucumber Suite" finished-at="2026-07-03T18:31:19 IST" duration-ms="76612">
+  <suite started-at="2026-07-06T11:15:54 IST" name="BDD Cucumber Suite" finished-at="2026-07-06T11:16:38 IST" duration-ms="43786">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.project.runner.TestRunner@40005471]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2026-07-03T18:30:03 IST" name="Cucumber Tests Execution" finished-at="2026-07-03T18:31:19 IST" duration-ms="76612">
+    <test started-at="2026-07-06T11:15:54 IST" name="Cucumber Tests Execution" finished-at="2026-07-06T11:16:38 IST" duration-ms="43786">
       <class name="com.project.runner.TestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.project.runner.TestRunner@40005471]" started-at="2026-07-03T18:30:03 IST" name="setUpClass" finished-at="2026-07-03T18:30:04 IST" duration-ms="1140" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.project.runner.TestRunner@40005471]" started-at="2026-07-06T11:15:54 IST" name="setUpClass" finished-at="2026-07-06T11:15:56 IST" duration-ms="1700" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@22eaa86e]]>
+                <![CDATA[org.testng.TestRunner@2eed37f4]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.project.runner.TestRunner@40005471]" started-at="2026-07-03T18:30:04 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-07-03T18:30:43 IST" duration-ms="39106" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.project.runner.TestRunner@40005471]" started-at="2026-07-06T11:15:56 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-07-06T11:16:16 IST" duration-ms="19893" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["TC01_Verify Product List Is Not Empty"]]>
+                <![CDATA["Navigate and Fill Gift Card Form"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Urban Ladder Bookshelves Automated Assertions"]]>
+                <![CDATA["Urban Ladder Gift Card Validation"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.project.runner.TestRunner@40005471]" started-at="2026-07-03T18:30:43 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-07-03T18:31:19 IST" duration-ms="36229" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.project.runner.TestRunner@40005471]" started-at="2026-07-06T11:16:16 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-07-06T11:16:38 IST" duration-ms="22013" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["TC02_Validate Top Five Bookshelves Criteria"]]>
+                <![CDATA["Verify Invalid Email Error Message"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Urban Ladder Bookshelves Automated Assertions"]]>
+                <![CDATA["Urban Ladder Gift Card Validation"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.project.runner.TestRunner@40005471]" started-at="2026-07-03T18:31:19 IST" name="tearDownClass" finished-at="2026-07-03T18:31:19 IST" duration-ms="47" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.project.runner.TestRunner@40005471]" started-at="2026-07-06T11:16:38 IST" name="tearDownClass" finished-at="2026-07-06T11:16:38 IST" duration-ms="47" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

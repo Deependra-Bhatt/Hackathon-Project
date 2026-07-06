@@ -10,6 +10,7 @@ import com.project.Hooks.Hooks;
 import com.project.Utils.ConfigReader;
 import com.project.pages.StudyChairsPage;
 
+import io.cucumber.java.After;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -74,17 +75,21 @@ public class StudyChairsSteps {
 
     @Then("All fetched products should belong to study chairs category")
     public void all_fetched_products_should_belong_to_study_chairs_category() {
-
         Assert.assertNotNull(topThreeChairs);
 
         for (String chair : topThreeChairs) {
-
             Assert.assertFalse(
                     chair.isEmpty(),
                     "Chair name is empty");
-
             log.info(chair);
         }
+    }
+    
+    @After
+    public void tearDown() {
+        // Automatically runs at the end of each scenario outline iteration to close the active browser
+        Hooks.tearDown();
+        log.info("Browser closed successfully after scenario execution.");
     }
 }
 
