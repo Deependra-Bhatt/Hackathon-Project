@@ -24,17 +24,13 @@ public class Hooks {
      * (fetched from config.properties)
      */
     public static void launchBrowser(String browser) {
-
         switch (browser.toLowerCase()) {
-
             case "firefox":
                 driver = new FirefoxDriver();
                 break;
-
             case "edge":
                 driver = new EdgeDriver();
                 break;
-
             case "chrome":
             default:
                 driver = new ChromeDriver();
@@ -42,7 +38,6 @@ public class Hooks {
         }
 
         driver.manage().window().maximize();
-
         driver.manage().timeouts()
               .implicitlyWait(
                       Duration.ofSeconds(
@@ -62,14 +57,12 @@ public class Hooks {
     /**
      * Automatically closes the browser after each scenario
      */
-    @After
-    public void tearDown() {
+//    @After
+    public static void tearDown() {
 
         if (driver != null) {
-
             driver.quit();
             driver = null;
-
             log.info("Browser closed after scenario execution.");
         }
     }
