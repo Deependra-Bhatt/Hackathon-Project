@@ -6,6 +6,13 @@
   <artifactId>New_Hackathon_Project</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   
+  <properties>
+    <aspectj.version>1.9.20</aspectj.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
+  </properties>
+  
   <dependencies>
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
@@ -52,5 +59,81 @@
       <artifactId>log4j-core</artifactId>
       <version>2.26.0</version>
     </dependency>
+
+    <!-- Allure Cucumber Integration -->
+      <dependency>
+          <groupId>io.qameta.allure</groupId>
+          <artifactId>allure-cucumber7-jvm</artifactId>
+          <version>2.35.3</version>
+      </dependency>
+
+      <dependency>
+          <groupId>io.qameta.allure</groupId>
+          <artifactId>allure-testng</artifactId>
+          <version>2.35.3</version>
+      </dependency>
+
+    <!-- Slf4j for Allure Logging -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>2.0.7</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-simple</artifactId>
+      <version>2.0.7</version>
+    </dependency>
+
+    <!-- AspectJ Weaver for Allure -->
+    <dependency>
+      <groupId>org.aspectj</groupId>
+      <artifactId>aspectjweaver</artifactId>
+      <version>${aspectj.version}</version>
+    </dependency>
   </dependencies>
+
+  <build>
+    <plugins>
+      <!-- Allure Maven Plugin -->
+      <plugin>
+        <groupId>io.qameta.allure</groupId>
+        <artifactId>allure-maven</artifactId>
+        <version>2.13.0</version>
+        <configuration>
+          <reportVersion>2.25.0</reportVersion>
+          <resultsDirectory>${project.build.directory}/allure-results</resultsDirectory>
+          <reportDirectory>${project.build.directory}/allure-report</reportDirectory>
+        </configuration>
+      </plugin>
+
+      <!-- Maven Surefire Plugin -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0</version>
+        <configuration>
+          <argLine>-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"</argLine>
+          <systemProperties>
+            <property>
+              <name>allure.results.directory</name>
+              <value>${project.build.directory}/allure-results</value>
+            </property>
+          </systemProperties>
+        </configuration>
+      </plugin>
+
+      <!-- Maven Compiler Plugin -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.11.0</version>
+        <configuration>
+          <source>21</source>
+          <target>21</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
