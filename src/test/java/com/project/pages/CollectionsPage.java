@@ -16,8 +16,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-
-
 public class CollectionsPage {
 
     private final WebDriver driver;
@@ -42,14 +40,12 @@ public class CollectionsPage {
                     ExpectedConditions.elementToBeClickable(newArrivalsLink));
 
             js.executeScript("arguments[0].click();", newArrivalsLink);
-
             waitForPageLoad();
-
-            System.out.println("Clicked New Arrivals");
+            log.info("Clicked New Arrivals");
 
         } catch (Exception e) {
 
-            System.out.println("Unable to Click New Arrivals");
+            log.info("Unable to Click New Arrivals");
             e.printStackTrace();
         }
     }
@@ -80,11 +76,9 @@ public class CollectionsPage {
 //    }
 
     public List<String> getOasisSubMenuItems() {
-
         List<String> menuItems = new ArrayList<>();
 
         try {
-
             // Wait for Oasis Collection section to be visible
             WebElement oasisSection = wait.until(
                     ExpectedConditions.visibilityOfElementLocated(
@@ -94,9 +88,7 @@ public class CollectionsPage {
             List<WebElement> links = oasisSection.findElements(By.tagName("a"));
 
             for (WebElement link : links) {
-
                 String text = link.getText().trim();
-
                 if (!text.isEmpty()) {
                     menuItems.add(text);
                 }
@@ -119,10 +111,7 @@ public class CollectionsPage {
         log.info("========================================");
 
         for (int i = 0; i < menuItems.size(); i++) {
-
             String item = (i + 1) + ". " + menuItems.get(i);
-
-            System.out.println(item);
             log.info(item);
         }
 

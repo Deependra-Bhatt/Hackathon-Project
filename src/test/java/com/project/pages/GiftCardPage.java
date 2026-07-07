@@ -131,19 +131,12 @@ public class GiftCardPage {
 	public void scrollToForm() {
 
 		WebElement formSection =
-
 				wait.until(
-
 						ExpectedConditions.presenceOfElementLocated(
-
 								By.xpath("//div[@class='justify-content-center mb-2 row']")));
-
 		((JavascriptExecutor) driver)
-
 		.executeScript(
-
 				"arguments[0].scrollIntoView({block:'center'});",
-
 				formSection);
 
 		log.info("Scrolled to Gift Card Form");
@@ -151,59 +144,36 @@ public class GiftCardPage {
 	}
 
 	public void fillGiftCardDetails() {
-
 		senderFirstName.sendKeys("Tester");
-
 		senderLastName.sendKeys("User");
-
 		senderEmail.sendKeys("tester@gmail.com");
-
 		senderPhone.sendKeys("9876543210");
-
 		receiverFirstName.sendKeys("James");
-
 		receiverLastName.sendKeys("Bond");
 
 		// INVALID EMAIL
-
 		receiverEmail.sendKeys("aehjbfkse");
 
 		//receiverEmail.sendKeys(Keys.TAB);
-
 		log.info("Sender and Receiver details entered");
-
 	}
 
 	public void scrollToPayButton() {
-
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-
 		js.executeScript(
-
 				"arguments[0].scrollIntoView({block:'center'});",
-
 				payNowButton
-
 				);
-
 		log.info("Scrolled to Pay Now button");
-
 	}
 
 	public void clickPayNow() {
-
 		wait.until(
-
 				ExpectedConditions.visibilityOf(payNowButton));
 
-
 		((JavascriptExecutor) driver)
-
 		.executeScript("arguments[0].click();", payNowButton);
-
-
 		log.info("Pay Now clicked");
-
 	}
 
 	public void takeScreenshot(String imageName) {
