@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="BDD Cucumber Suite">
+    <listeners>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+    </listeners>
     <test name="Cucumber Tests Execution">
         <classes>
             <class name="com.project.runner.TestRunner"/>
