@@ -10,10 +10,11 @@ import io.cucumber.testng.CucumberOptions;
 			    "src/test/resources/features/giftCards.feature",
 				"src/test/resources/features/Collections.feature"
 			},
-    glue = "com.project.stepDefinitions",
+    glue = {"com.project.stepDefinitions"},
     plugin = {
         "pretty",
-        "html:target/cucumber-reports/bdd-report.html"
+        "html:target/cucumber-reports/bdd-report.html",
+        "com.project.Utils.CucumberExtentListener"
     },
     monochrome = true
 )
