@@ -27,7 +27,7 @@ public class BookshelvesPage {
     @FindBy(xpath = "//div[@id='dropdown-menu-storage-type']//*[contains(text(), 'Open Storage') or @value='Open Storage']")
     private WebElement openStorageOption;
 
-    @FindBy(xpath = "//div[@role='link' and contains(@class, 'xmdLL')]")
+    @FindBy(xpath = "//div[contains(@class, 'xmdLL')]")
     private List<WebElement> productCards;
 
     public BookshelvesPage(WebDriver driver) {
@@ -44,7 +44,6 @@ public class BookshelvesPage {
     }
 
     public int getProductCardsCount() {
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@role='link' and contains(@class, 'xmdLL')]")));
         return productCards.size();
     }
 

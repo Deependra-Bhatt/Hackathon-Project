@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Cucumber Tests Execution</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>7/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>4/3/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Jul 10 13:36:32 IST 2026</td>
+<td>Started on:</td><td>Fri Jul 10 15:14:11 IST 2026</td>
 </tr>
-<tr><td>Total time:</td><td>307 seconds (307517 ms)</td>
+<tr><td>Total time:</td><td>320 seconds (320487 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,166 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.project.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.project.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Invalid Email Error Message", "Urban Ladder Gift Card Validation"</td>
+<td><div><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=149.0.7827.103)
+Build info: version: &apos;4.32.0&apos;, revision: &apos;d17c8aa950&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.8&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f5dc1ac39b673984901d43b0d1ef78b4, sendKeysToElement {id=f.D8A01B730554A8C035A432F846F49BE2.d.26444B9702E313F6AB911AB78E69D1CC.e.65, value=[Ljava.lang.CharSequence;@6f0ab520}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.103, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\2497855\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55027}, goog:processID: 7420, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55027/devtoo..., se:cdpVersion: 149.0.7827.103, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (f5dc1ac39b673984901d43b0d1ef78b4)] -&gt; xpath: //div[@id=&apos;sender-details&apos;]//input[@id=&apos;firstname&apos;]]
+Session ID: f5dc1ac39b673984901d43b0d1ef78b4
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy44.sendKeys(Unknown Source)
+	at com.project.pages.GiftCardPage.fillGiftCardDetails(GiftCardPage.java:133)
+	at com.project.stepDefinitions.GiftCardSteps.lambda$4(GiftCardSteps.java:73)
+	at io.qameta.allure.Allure.lambda$step$3(Allure.java:152)
+	at io.qameta.allure.Allure.step(Allure.java:181)
+	at io.qameta.allure.Allure.step(Allure.java:150)
+	at com.project.stepDefinitions.GiftCardSteps.user_fills_details(GiftCardSteps.java:72)
+	at ✽.User fills details(file:///C:/Users/2497855/eclipse-workspace/New_Hackathon_Project/src/test/resources/features/giftCards.feature:14)
+... Removed 5 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace469383566", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace469383566'><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=149.0.7827.103)
+Build info: version: &apos;4.32.0&apos;, revision: &apos;d17c8aa950&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.8&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f5dc1ac39b673984901d43b0d1ef78b4, sendKeysToElement {id=f.D8A01B730554A8C035A432F846F49BE2.d.26444B9702E313F6AB911AB78E69D1CC.e.65, value=[Ljava.lang.CharSequence;@6f0ab520}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.103, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\2497855\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55027}, goog:processID: 7420, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55027/devtoo..., se:cdpVersion: 149.0.7827.103, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (f5dc1ac39b673984901d43b0d1ef78b4)] -&gt; xpath: //div[@id=&apos;sender-details&apos;]//input[@id=&apos;firstname&apos;]]
+Session ID: f5dc1ac39b673984901d43b0d1ef78b4
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy44.sendKeys(Unknown Source)
+	at com.project.pages.GiftCardPage.fillGiftCardDetails(GiftCardPage.java:133)
+	at com.project.stepDefinitions.GiftCardSteps.lambda$4(GiftCardSteps.java:73)
+	at io.qameta.allure.Allure.lambda$step$3(Allure.java:152)
+	at io.qameta.allure.Allure.step(Allure.java:181)
+	at io.qameta.allure.Allure.step(Allure.java:150)
+	at com.project.stepDefinitions.GiftCardSteps.user_fills_details(GiftCardSteps.java:72)
+	at ✽.User fills details(file:///C:/Users/2497855/eclipse-workspace/New_Hackathon_Project/src/test/resources/features/giftCards.feature:14)
+</pre></div></td>
+<td>29</td>
+<td>com.project.runner.TestRunner@2b56f5f8</td></tr>
+<tr>
+<td title='com.project.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.project.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "TC02_Validate Top Five Bookshelves Criteria", "Urban Ladder Bookshelves Automated Assertions"</td>
+<td><div><pre>java.lang.AssertionError: Assertion Failed: No elements matching criteria. expected [true] but found [false]
+	at com.project.pages.BookshelvesPage.validateTopProducts(BookshelvesPage.java:80)
+	at com.project.stepDefinitions.BookshelvesSteps.the_results_should_display_items_and_contain_keyword(BookshelvesSteps.java:93)
+	at ✽.The results should display up to 5 items and all displayed items must contain &quot;Bookshelf&quot;(file:///C:/Users/2497855/eclipse-workspace/New_Hackathon_Project/src/test/resources/features/bookshelves.feature:16)
+... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1400116867", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1400116867'><pre>java.lang.AssertionError: Assertion Failed: No elements matching criteria. expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at com.project.pages.BookshelvesPage.validateTopProducts(BookshelvesPage.java:80)
+	at com.project.stepDefinitions.BookshelvesSteps.the_results_should_display_items_and_contain_keyword(BookshelvesSteps.java:93)
+	at ✽.The results should display up to 5 items and all displayed items must contain &quot;Bookshelf&quot;(file:///C:/Users/2497855/eclipse-workspace/New_Hackathon_Project/src/test/resources/features/bookshelves.feature:16)
+</pre></div></td>
+<td>83</td>
+<td>com.project.runner.TestRunner@2b56f5f8</td></tr>
+<tr>
+<td title='com.project.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.project.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "TC01_Verify Product List Is Not Empty", "Urban Ladder Bookshelves Automated Assertions"</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.xpath: //div[@role=&apos;link&apos; and contains(@class, &apos;xmdLL&apos;)] (tried for 10 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.project.pages.BookshelvesPage.getProductCardsCount(BookshelvesPage.java:47)
+	at com.project.stepDefinitions.BookshelvesSteps.the_product_results_list_should_not_be_empty(BookshelvesSteps.java:79)
+	at ✽.The product results list should not be empty(file:///C:/Users/2497855/eclipse-workspace/New_Hackathon_Project/src/test/resources/features/bookshelves.feature:8)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@role=&apos;link&apos; and contains(@class, &apos;xmdLL&apos;)]&quot;}
+  (Session info: chrome=149.0.7827.103)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.32.0&apos;, revision: &apos;d17c8aa950&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.8&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ac00798faa3ef7a79f7b96fb2d4eded9, findElement {using=xpath, value=//div[@role=&apos;link&apos; and contains(@class, &apos;xmdLL&apos;)]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.103, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\2497855\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54310}, goog:processID: 25900, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54310/devtoo..., se:cdpVersion: 149.0.7827.103, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ac00798faa3ef7a79f7b96fb2d4eded9
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:171)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:168)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	... 3 more
+... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace961312738", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace961312738'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.xpath: //div[@role=&apos;link&apos; and contains(@class, &apos;xmdLL&apos;)] (tried for 10 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.project.pages.BookshelvesPage.getProductCardsCount(BookshelvesPage.java:47)
+	at com.project.stepDefinitions.BookshelvesSteps.the_product_results_list_should_not_be_empty(BookshelvesSteps.java:79)
+	at ✽.The product results list should not be empty(file:///C:/Users/2497855/eclipse-workspace/New_Hackathon_Project/src/test/resources/features/bookshelves.feature:8)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@role=&apos;link&apos; and contains(@class, &apos;xmdLL&apos;)]&quot;}
+  (Session info: chrome=149.0.7827.103)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.32.0&apos;, revision: &apos;d17c8aa950&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.8&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ac00798faa3ef7a79f7b96fb2d4eded9, findElement {using=xpath, value=//div[@role=&apos;link&apos; and contains(@class, &apos;xmdLL&apos;)]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.103, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\2497855\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54310}, goog:processID: 25900, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54310/devtoo..., se:cdpVersion: 149.0.7827.103, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ac00798faa3ef7a79f7b96fb2d4eded9
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:171)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:168)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	... 3 more
+</pre></div></td>
+<td>61</td>
+<td>com.project.runner.TestRunner@2b56f5f8</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -76,40 +236,25 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.project.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.project.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "TC02_Validate Top Five Bookshelves Criteria", "Urban Ladder Bookshelves Automated Assertions"</td>
-<td></td>
-<td>48</td>
-<td>com.project.runner.TestRunner@2116b68b</td></tr>
-<tr>
-<td title='com.project.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.project.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "TC02_Verify fetched products are study chairs", "Study Chairs Validation"</td>
-<td></td>
-<td>99</td>
-<td>com.project.runner.TestRunner@2116b68b</td></tr>
-<tr>
-<td title='com.project.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.project.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Navigate and Fill Gift Card Form", "Urban Ladder Gift Card Validation"</td>
-<td></td>
-<td>12</td>
-<td>com.project.runner.TestRunner@2116b68b</td></tr>
-<tr>
-<td title='com.project.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.project.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "TC01_Verify Product List Is Not Empty", "Urban Ladder Bookshelves Automated Assertions"</td>
-<td></td>
-<td>48</td>
-<td>com.project.runner.TestRunner@2116b68b</td></tr>
-<tr>
-<td title='com.project.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.project.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Invalid Email Error Message", "Urban Ladder Gift Card Validation"</td>
-<td></td>
-<td>27</td>
-<td>com.project.runner.TestRunner@2116b68b</td></tr>
-<tr>
 <td title='com.project.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.project.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "TC01_Verify first three study chairs are fetched", "Study Chairs Validation"</td>
 <td></td>
-<td>26</td>
-<td>com.project.runner.TestRunner@2116b68b</td></tr>
+<td>27</td>
+<td>com.project.runner.TestRunner@2b56f5f8</td></tr>
 <tr>
 <td title='com.project.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.project.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Retrieve Oasis Collection Submenu Items", "Urban Ladder Collections"</td>
 <td></td>
-<td>41</td>
-<td>com.project.runner.TestRunner@2116b68b</td></tr>
+<td>70</td>
+<td>com.project.runner.TestRunner@2b56f5f8</td></tr>
+<tr>
+<td title='com.project.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.project.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "TC02_Verify fetched products are study chairs", "Study Chairs Validation"</td>
+<td></td>
+<td>26</td>
+<td>com.project.runner.TestRunner@2b56f5f8</td></tr>
+<tr>
+<td title='com.project.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.project.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Navigate and Fill Gift Card Form", "Urban Ladder Gift Card Validation"</td>
+<td></td>
+<td>15</td>
+<td>com.project.runner.TestRunner@2b56f5f8</td></tr>
 </table><p>
 </body>
 </html>
