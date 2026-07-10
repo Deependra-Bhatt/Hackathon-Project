@@ -29,56 +29,41 @@ public class GiftCardPage {
 
 	// AMOUNT & QUANTITY
 	@FindBy(id = "denomination")
-
 	private WebElement amountInput;
 
 	@FindBy(id = "quantity")
-
 	private WebElement quantityInput;
 
 	//scrolltargets
-
 	@FindBy(xpath = "//div[@class='justify-content-center row']")
-
 	private WebElement scrollTargetCards;
 
 
 	// SENDER DETAILS
-
 	@FindBy(xpath = "//div[@id='sender-details']//input[@id='firstname']")
-
 	private WebElement senderFirstName;
 
 	@FindBy(xpath = "//div[@id='sender-details']//input[@id='lastname']")
-
 	private WebElement senderLastName;
 
 	@FindBy(css = "#sender-details #email")
-
 	private WebElement senderEmail;
 
 	@FindBy(id = "telephone")
-
 	private WebElement senderPhone;
 
 	// RECEIVER DETAILS
-
 	@FindBy(xpath = "//div[@id='receiver-details']//input[@id='firstname']")
-
 	private WebElement receiverFirstName;
 
 	@FindBy(xpath = "//div[@id='receiver-details']//input[@id='lastname']")
-
 	private WebElement receiverLastName;
 
 	@FindBy(css = "#receiver-details #email")
-
 	private WebElement receiverEmail;
 
 	// PAY NOW
-
 	@FindBy(id = "pay-now-button")
-
 	private WebElement payNowButton;
 
 	// ERROR MESSAGE
@@ -100,8 +85,9 @@ public class GiftCardPage {
 	}
 
 	public void enterAmount(String amount) {
+		// to avoid stale element exception
 		wait.until(
-				ExpectedConditions.visibilityOf(amountInput));
+				ExpectedConditions.visibilityOfElementLocated(By.id("denomination")));
 		amountInput.clear();
 		amountInput.sendKeys(amount);
 		log.info("Amount entered: {}", amount);

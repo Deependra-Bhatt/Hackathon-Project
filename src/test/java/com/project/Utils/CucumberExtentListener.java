@@ -6,6 +6,8 @@ import com.project.Hooks.Hooks;
 import io.cucumber.plugin.ConcurrentEventListener;
 import io.cucumber.plugin.event.*;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 import org.openqa.selenium.WebDriver;
@@ -64,7 +66,10 @@ public class CucumberExtentListener implements ConcurrentEventListener {
     }
 
     private void handleTestStepFinished(TestStepFinished event) {
-    	Date date = new Date();
+    	// A readable timestamp format
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm-ss");
+        String timestamp = LocalDateTime.now().format(formatter);
+        
         // Only log actual test steps, skip background lifecycle hooks
         String stepClassName = event.getTestStep().getClass().getName();
         if (stepClassName.contains("Pickle") || stepClassName.contains("Step")) {
@@ -81,7 +86,7 @@ public class CucumberExtentListener implements ConcurrentEventListener {
                         if (driver != null) {
                             String screenshotName = "StepFailure_" + System.currentTimeMillis();
                             ScreenshotUtil.capture(driver, screenshotName);
-                            stepTest.get().addScreenCaptureFromPath("../Screenshots/" + screenshotName + date.getDate()+ date.getTime() + ".png");
+                            stepTest.get().addScreenCaptureFromPath("../Screenshots/" + screenshotName + "_" + timestamp + ".png");
                         }
                     } catch (Exception e) {
                         stepTest.get().log(com.aventstack.extentreports.Status.WARNING, "Could not attach screenshot: " + e.getMessage());
