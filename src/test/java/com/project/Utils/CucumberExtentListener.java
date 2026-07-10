@@ -5,6 +5,9 @@ import com.aventstack.extentreports.ExtentTest;
 import com.project.Hooks.Hooks;
 import io.cucumber.plugin.ConcurrentEventListener;
 import io.cucumber.plugin.event.*;
+
+import java.util.Date;
+
 import org.openqa.selenium.WebDriver;
 
 public class CucumberExtentListener implements ConcurrentEventListener {
@@ -61,6 +64,7 @@ public class CucumberExtentListener implements ConcurrentEventListener {
     }
 
     private void handleTestStepFinished(TestStepFinished event) {
+    	Date date = new Date();
         // Only log actual test steps, skip background lifecycle hooks
         String stepClassName = event.getTestStep().getClass().getName();
         if (stepClassName.contains("Pickle") || stepClassName.contains("Step")) {
@@ -77,7 +81,7 @@ public class CucumberExtentListener implements ConcurrentEventListener {
                         if (driver != null) {
                             String screenshotName = "StepFailure_" + System.currentTimeMillis();
                             ScreenshotUtil.capture(driver, screenshotName);
-                            stepTest.get().addScreenCaptureFromPath("../Screenshots/" + screenshotName + ".png");
+                            stepTest.get().addScreenCaptureFromPath("../Screenshots/" + screenshotName + date.getDate()+ date.getTime() + ".png");
                         }
                     } catch (Exception e) {
                         stepTest.get().log(com.aventstack.extentreports.Status.WARNING, "Could not attach screenshot: " + e.getMessage());
